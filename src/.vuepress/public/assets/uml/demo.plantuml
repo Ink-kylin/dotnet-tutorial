@@ -1,0 +1,78 @@
+```puml
+@startuml
+
+database "SDK" {
+  node ".NET CLI" {
+  }
+  node ".NET Runtime And Library" {
+  }
+
+}
+
+@enduml
+```
+
+@startuml
+package "Standalone" {
+
+  node ".NET Runtime And Library" {
+
+  }
+ [app1]
+}
+package "Depends on framework" {
+  folder "file"{
+  [dll]
+  [execute]
+  }
+    [app2]
+
+}
+
+@enduml
+
+```plantuml
+@startuml
+
+interface DotNet {
+  commonLanguageRuntime()
+  classLibrary()
+}
+
+class DotNetFramework implements DotNet{
+
+}
+
+class DotNetCore extends DotNetFramework{
+
+}
+
+
+class Mono extends DotNetFramework{
+
+}
+
+class UWP extends DotNetFramework {
+
+}
+
+note left of DotNetFramework::clr
+  公共语言运行时
+end note
+
+note left of UWP
+ Windows通用应用平台
+end note
+
+note left of DotNetCore
+  跨平台，主要实现
+end note
+
+note left of Mono
+  小型、开源、跨平台
+end note
+
+@enduml
+```
+
+

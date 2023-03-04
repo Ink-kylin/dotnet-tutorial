@@ -26,16 +26,24 @@ export const zhNavbar = navbar([
         ],
     },
     {
-        text: "临时",
-        icon: "temp",
-        link: "/temp",
-        prefix: "/temp/",
+        text: "实战项目",
+        icon: "project",
+        link: "/actual_project",
+        prefix: "/actual_project/",
         children: [
             {
-                text: "新圩港思路",
-                icon: "mind",
-                link: "xwg"
+                text: "业务类型",
+                icon: "business",
+                prefix: "business_type/",
+                children: [
+                    {
+                        text: "后台管理系统",
+                        icon: "admin",
+                        link: "awesome_admin"
+                    }
+                ]
             }
+
         ]
     },
 
